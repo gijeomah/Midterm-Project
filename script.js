@@ -43,6 +43,7 @@ function killer(){
     para.textContent = "You killed char 1 hide the body or weapon?";
     //Putting the classroom image
     image.src="Class.jpg";
+    
     //msg.style.display = "block";
     //msg.textContent="Hide the body or hide the murder weapon?";
     let wepbtn = document.createElement('button');
@@ -54,7 +55,7 @@ function killer(){
 
 }
     
-
+document.createElement()
 
 function fight(){
     console.log ("idk right now");
