@@ -34,9 +34,16 @@ function talk(){
     console.log("talk");
     para.textContent="You decided to talk to the detetive huh?";
     caption.textContent="Discover how to woo them over";
-    
+    image.src="backyard.jpeg";
+    image.addEventListener("mouseover", function(){
+        image.setAttribute("data-toggle", "tooltip");
+        image.title = "Type: This is my sisters toy dummy";
 
-}
+    })
+
+
+
+};
 function fight(){
     console.log("idk");
     let timer = 25;
@@ -76,11 +83,13 @@ function winscrn(){
     console.log("win");
 	//image.src="win.jpeg";
 	para.textContent="You Win!"
+    //clear buttons
 };
 function loscrn(){
 	console.log("lose");
 	//image.src="lose.jpeg";
 	para.textContent="You Lose!";
+    //clear buttons
 }
 
 function dragstartHandler(ev) {
