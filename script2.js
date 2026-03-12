@@ -6,6 +6,8 @@ let para = document.getElementById('main_intro');
 let caption = document.getElementById('story1');
 let image = document.getElementById("image");
 let draimg = document.createElement('img');
+let contain = document.getElementById('buttonContainer');
+console.log(contain);
 //defining body 
 let body = document.body;
 //reassign bttn name 
@@ -35,11 +37,28 @@ function talk(){
     para.textContent="You decided to talk to the detetive huh?";
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
+    let inpt = document.createElement('input');
+    console.log(inpt);
+    inpt.type="text";
+    inpt.textContent = "WHOSS DEAD BOdY IS THIS";
+    contain.appendChild(inpt);
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
+    if (inpt.value=="This is my sisters toy dummy"){
+        winscrn();
+    }
     image.addEventListener("mouseover", function(){
         image.setAttribute("data-toggle", "tooltip");
         image.title = "Type: This is my sisters toy dummy";
 
-    })
+        // let msg = prompt("WHOSS DEAD BOdY IS THIS");
+        // if (msg==" This is my sisters toy dummy"){
+        //     winscrn();
+        // }else{
+        //     loscrn();
+        // }
+
+    });
 
 
 
@@ -57,8 +76,8 @@ function fight(){
     body.append(draimg);
 
     //clear bttns(create new ones) + add music + timer 
-    kilbtn.remove();
-    detbtn.remove();
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
     id = setInterval(function(){
         timer = timer - 1;
         caption.textContent= timer; 
@@ -76,19 +95,28 @@ function fight(){
 	//console.log("placeholder");
 //}
 
+function clrbtn(btn_nme){
+    btn_nme.remove()
+}
 
 
 
 function winscrn(){
     console.log("win");
-	//image.src="win.jpeg";
+	image.src="win.jpeg";
 	para.textContent="You Win!"
+    clrbtn(caption);
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
     //clear buttons
 };
 function loscrn(){
 	console.log("lose");
-	//image.src="lose.jpeg";
+	image.src="lose.jpeg";
 	para.textContent="You Lose!";
+    clrbtn(caption);
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
     //clear buttons
 }
 
