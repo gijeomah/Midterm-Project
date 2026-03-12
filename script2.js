@@ -64,9 +64,9 @@ function fight(){
     
 
 };
-function body(){
-	console.log("placeholder");
-}
+//function deadbody(){
+	//console.log("placeholder");
+//}
 
 
 
