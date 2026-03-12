@@ -22,10 +22,20 @@ kilbtn.addEventListener('click', function(){
         kilbtn.addEventListener('click',fight);
         detbtn.addEventListener('click',winscrn);
     });
-	detbtn.addEventListener('click',body);
+	detbtn.addEventListener('click',function(){
+        kilbtn.textContent="Talk to detcetive";
+        detbtn.textContent="Fight the Detective";
+        kilbtn.addEventListener('click',talk);
+    });
 	
 
 });
+function talk(){
+    console.log("talk");
+    para.textContent="You decided to talk to the detetive huh?";
+    caption.textContent="Discover how to woo them over";
+
+}
 function fight(){
     console.log("idk");
     let timer = 25;
@@ -95,4 +105,3 @@ function dropHandler(ev) {
 	}
 	}
     //test test
-    
