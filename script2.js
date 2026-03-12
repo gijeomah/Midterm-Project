@@ -34,6 +34,7 @@ function talk(){
     console.log("talk");
     para.textContent="You decided to talk to the detetive huh?";
     caption.textContent="Discover how to woo them over";
+    
 
 }
 function fight(){
