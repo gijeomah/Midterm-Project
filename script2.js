@@ -22,6 +22,8 @@ kilbtn.addEventListener('click', function(){
         kilbtn.addEventListener('click',fight);
         detbtn.addEventListener('click',winscrn);
     });
+	detbtn.addEventListener('click',body);
+	
 
 });
 function fight(){
@@ -37,8 +39,8 @@ function fight(){
     body.append(draimg);
 
     //clear bttns(create new ones) + add music + timer 
-    kilbtn.remove;
-    detbtn.remove;
+    kilbtn.remove();
+    detbtn.remove();
     id = setInterval(function(){
         timer = timer - 1;
         caption.textContent= timer; 
@@ -51,13 +53,24 @@ function fight(){
     draimg.ondragstart = dragstartHandler;
     
 
-
-    
 };
+function body(){
+	console.log("placeholder");
+}
+
+
+
 
 function winscrn(){
-    console.log("idk")
+    console.log("win");
+	//image.src="win.jpeg";
+	para.textContent="You Win!"
 };
+function loscrn(){
+	console.log("lose");
+	//image.src="lose.jpeg";
+	para.textContent="You Lose!";
+}
 
 function dragstartHandler(ev) {
     console.log("dragstart");
@@ -66,10 +79,19 @@ function dragstartHandler(ev) {
 function dragoverHandler(ev) {
     ev.preventDefault();
     console.log("drag over");
+    caption.textContent="The hidden message/alaby: char1 " ;
+
 }
 
 function dropHandler(ev) {
     ev.preventDefault();
     console.log("drop");
-}
+	let usrmsg = prompt("Enter the hidden message");
+	if (usrmsg == "char1"){
+		para.textContent="You have sucessfully hidden body "; 
+		//winscrn();
+		}else{
+		//loscrn();
+	}
+	}
     
