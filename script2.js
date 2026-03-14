@@ -8,6 +8,8 @@ let image = document.getElementById("image");
 let draimg = document.createElement('img');
 let contain = document.getElementById('buttonContainer');
 console.log(contain);
+//accessing the button
+let okbtn = document.getElementById("submit");
 //defining body 
 let body = document.body;
 //reassign bttn name 
@@ -44,9 +46,12 @@ function talk(){
     contain.appendChild(inpt);
     clrbtn(kilbtn);
     clrbtn(detbtn);
-    if (inpt.value=="This is my sisters toy dummy"){
+    okbtn.addEventListener("click",function(){
+        if (inpt.value=="This is my sisters toy dummy"){
         winscrn();
     }
+    });
+
     image.addEventListener("mouseover", function(){
         image.setAttribute("data-toggle", "tooltip");
         image.title = "Type: This is my sisters toy dummy";
