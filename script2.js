@@ -46,6 +46,7 @@ function talk(){
     contain.appendChild(inpt);
     clrbtn(kilbtn);
     clrbtn(detbtn);
+    okbtn.hidden=false;
     okbtn.addEventListener("click",function(){
         if (inpt.value=="This is my sisters toy dummy"){
         winscrn();
