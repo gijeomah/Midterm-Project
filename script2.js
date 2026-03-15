@@ -42,7 +42,21 @@ kilbtn.addEventListener('click', function(){
 function typing(){
     console.log("typing");
     //type blah blah, in input box 
+    para.textContent="Type these words: I , Didn't, Do , It";
+    contain.appendChild(inpt);
     //check if inpt.value == "Secret Message"
+    inpt.addEventListener("keydown",function(event){
+        caption.textContent="Your Words are: "
+        if (event.key=="Enter"){
+            if (inpt.value=="I Didn't Do It"){
+                winscrn();
+            }else{
+                loscrn();
+            }
+        }else{
+            caption.textContent+=event.key;
+        }
+    });
     //display what they are typing
     //event listner to append the key stroke to paragraph tag
     //event listner for the enter key to check if inputvalue
