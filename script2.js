@@ -56,8 +56,11 @@ function typing(){
             }else{
                 loscrn();
             }
+        //Goodgled this 
+        } else if(event.key.length===1){
+            caption.textContent+=event.key;
+
         }
-        caption.textContent+=event.key;
     
     });
     //display what they are typing
