@@ -41,6 +41,9 @@ kilbtn.addEventListener('click', function(){
 });
 function typing(){
     console.log("typing");
+    //clr btns
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
     contain.appendChild(inpt);
