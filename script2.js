@@ -12,8 +12,8 @@ console.log(contain);
 let okbtn = document.getElementById("submit");
 //defining body 
 let body = document.body;
-//let txt = document.createElement('p');
-//let inpt = document.getElementById('inpt');
+let txt = document.createElement('p');
+let inpt = document.createElement('input');
 //defining timer
 let timer = 25;
 //reassign bttn name 
@@ -34,7 +34,7 @@ kilbtn.addEventListener('click', function(){
         kilbtn.textContent="Talk to detcetive";
         detbtn.textContent="Fight the Detective";
         kilbtn.addEventListener('click',talk);
-        //detbtn.addEventListener('click',typing);
+        detbtn.addEventListener('click',typing);
     });
 	
 
@@ -53,15 +53,15 @@ function talk(){
     para.textContent="You decided to talk to the detetive huh?";
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
-    console.log(inpt);
-    let inpt = document.createElement('input');
-    inpt.type="text";
-    //inpt.textContent = "WHOSS DEAD BOdY IS THIS";
+    //console.log(inpt);
+    inpt.hidden=false;
+    //create paragraph tag to ask that question
+    txt.textContent = "WHOSS DEAD BOdY IS THIS";
+    body.append(txt);
     contain.appendChild(inpt);
     clrbtn(kilbtn);
     clrbtn(detbtn);
     okbtn.hidden=false;
-    //create paragraph tag to ask that question
     okbtn.addEventListener("click",function(){
         if (inpt.value=="This is my sisters toy dummy"){
         winscrn();
@@ -132,7 +132,7 @@ function winscrn(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     clrbtn(okbtn);
-    clrbtn(p);
+    clrbtn(txt);
     clrbtn(inpt);
     //clear buttons
 };
@@ -144,7 +144,7 @@ function loscrn(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     clrbtn(okbtn);
-    clrbtn(p);
+    clrbtn(txt);
     clrbtn(inpt);
     //clear buttons
 }
