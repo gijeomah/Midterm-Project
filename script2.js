@@ -50,6 +50,8 @@ function talk(){
     okbtn.addEventListener("click",function(){
         if (inpt.value=="This is my sisters toy dummy"){
         winscrn();
+    }else{
+        loscrn();
     }
     });
 
@@ -114,6 +116,7 @@ function winscrn(){
     clrbtn(caption);
     clrbtn(kilbtn);
     clrbtn(detbtn);
+    clrbtn(ok);
     //clear buttons
 };
 function loscrn(){
@@ -143,9 +146,11 @@ function dropHandler(ev) {
 	let usrmsg = prompt("Enter the hidden message");
 	if (usrmsg == "char1"){
 		para.textContent="You have sucessfully hidden body "; 
-		//winscrn();
-		}else{
-		//loscrn();
-	}
-	}
+		winscrn();
+		}else if(timer > 0){
+            para.textContent="You have until the timer runs out!";
+        }else{
+            loscrn();
+        }
+	};
     //test test test tes
