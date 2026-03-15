@@ -53,20 +53,20 @@ function dection(){
 
 };
 
-function classroom(){
-    kilbtn.textContent="Fight/Talk to detective";
-    detbtn.textContent="Try to catch BS?";
-    kilbtn.addEventListener('click',talk2);
-    detbtn.addEventListener('click',loscrn);
+//function classroom(){
+    //kilbtn.textContent="Fight/Talk to detective";
+    //detbtn.textContent="Try to catch BS?";
+    //kilbtn.addEventListener('click',talk2);
+    //detbtn.addEventListener('click',loscrn);
     //change kilbtn
     //change background image to classroom
     //contain.appendChild(audio);
-    para.textContent="Char1 is dead! You suspect your fellow classmate";
-    audio.loop=true;
-    audio.volume = 0.75;
-    audio.play();
+    //para.textContent="Char1 is dead! You suspect your fellow classmate";
+    //audio.loop=true;
+    //audio.volume = 0.75;
+    //audio.play();
 
-};
+//};
 //async function talk2(){
     //clrbtn(kilbtn);
     //clrbtn(detbtn);
