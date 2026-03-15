@@ -47,9 +47,9 @@ function typing(){
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
     contain.appendChild(inpt);
+    caption.textContent="Your Words are: ";
     //check if inpt.value == "Secret Message"
     inpt.addEventListener("keydown",function(event){
-        caption.textContent="Your Words are: "
         if (event.key=="Enter"){
             if (inpt.value=="I Didn't Do It"){
                 winscrn();
