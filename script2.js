@@ -72,16 +72,17 @@ async function talk2(){
     clrbtn(detbtn);
     let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
-    inpt=inpt.cloneNode(true);//googled
+    let new_inpt=document.createElement('input');
+    //inpt=inpt.cloneNode(true);//googled
     caption.textContent="Type this: ";
-    contain.appendChild(inpt);
+    contain.appendChild(new_inpt);
     for (let i=0; i<lst.length; i++){
         caption.textContent+=lst[i] + " ";
         await delay (3000);
     };
-    inpt.addEventListener("keydown", function(event){
+    new_inpt.addEventListener("keydown", function(event){
         if (event.key == "Enter"){
-            if (inpt.value == "Did You Do It"){
+            if (new_inpt.value == "Did You Do It"){
                 winscrn();
             }else {
                 loscrn();
@@ -97,15 +98,16 @@ function typing(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     //GOOGLED (wipes all previous event listners)
-    inpt=inpt.cloneNode(true);
+    //inpt=inpt.cloneNode(true);
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
-    contain.appendChild(inpt);
+    let inpt2=document.createElement('input');
+    contain.appendChild(inpt2);
     caption.textContent="Your Words are: ";
     //check if inpt.value == "Secret Message"
-    inpt.addEventListener("keydown",function(event){
+    inpt2.addEventListener("keydown",function(event){
         if (event.key=="Enter"){
-            if (inpt.value=="I Didn't Do It"){
+            if (inpt2.value=="I Didn't Do It"){
                 winscrn();
             }else{
                 loscrn();
