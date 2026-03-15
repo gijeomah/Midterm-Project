@@ -12,8 +12,8 @@ console.log(contain);
 let okbtn = document.getElementById("submit");
 //defining body 
 let body = document.body;
-let txt = document.createElement('p');
-let inpt = document.getElementById('inpt');
+//let txt = document.createElement('p');
+//let inpt = document.getElementById('inpt');
 //defining timer
 let timer = 25;
 //reassign bttn name 
@@ -44,6 +44,8 @@ function typing(){
     //type blah blah, in input box 
     //check if inpt.value == "Secret Message"
     //display what they are typing
+    //event listner to append the key stroke to paragraph tag
+    //event listner for the enter key to check if inputvalue
 }
 
 function talk(){
@@ -52,14 +54,14 @@ function talk(){
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
     console.log(inpt);
-    inpt.hidden=false;
-    //create paragraph tag to ask that question
-    p.textContent = "WHOSS DEAD BOdY IS THIS";
-    body.append(p);
+    let inpt = document.createElement('input');
+    inpt.type="text";
+    //inpt.textContent = "WHOSS DEAD BOdY IS THIS";
     contain.appendChild(inpt);
     clrbtn(kilbtn);
     clrbtn(detbtn);
     okbtn.hidden=false;
+    //create paragraph tag to ask that question
     okbtn.addEventListener("click",function(){
         if (inpt.value=="This is my sisters toy dummy"){
         winscrn();
