@@ -1,6 +1,8 @@
 //Define bttns first
 let kilbtn = document.getElementById('kill');
 let detbtn = document.getElementById('detect');
+//defining music 
+const audio = document.getElementById("myAudio");
 //defining text
 let para = document.getElementById('main_intro');
 let caption = document.getElementById('story1');
@@ -43,7 +45,25 @@ kilbtn.addEventListener('click', function(){
 function dection(){
     console.log("Dection");
     image.src="backyard.jpeg";
-}
+    caption.textContent="Backyard";
+    kilbtn.textContent="Look in classroom";
+    detbtn.textContent="find Murder Weapon";
+    kilbtn.addEventListener('click',classroom);
+    detbtn.addEventListener('click',weapon);
+
+};
+function classroom(){
+    //change detbtn
+    //change kilbtn
+    //change background image to classroom
+    //contain.appendChild(audio);
+    audio.loop=true;
+    audio.volume = 0.5;
+    audio.play;
+
+};
+
+
 function typing(){
     console.log("typing");
     //clr btns
@@ -207,3 +227,13 @@ async function dropHandler(ev) {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+//Googled this too
+function playMusic() {
+  audio.play();
+}
+
+// Function to pause the music
+function pauseMusic() {
+  audio.pause();
+}
+
