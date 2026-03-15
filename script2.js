@@ -49,13 +49,15 @@ function dection(){
     kilbtn.textContent="Look in classroom";
     detbtn.textContent="find Murder Weapon";
     kilbtn.addEventListener('click',classroom);
-    detbtn.addEventListener('click',weapon);
+    detbtn.addEventListener('click',winscrn);
 
 };
+
 function classroom(){
     kilbtn.textContent="Fight/Talk to detective";
     detbtn.textContent="Try to catch BS?";
     kilbtn.addEventListener('click',talk2);
+    detbtn.addEventListener('click',loscrn);
     //change kilbtn
     //change background image to classroom
     //contain.appendChild(audio);
@@ -66,6 +68,8 @@ function classroom(){
 
 };
 async function talk2(){
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
     let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
     caption.textContent="Type this: ";
