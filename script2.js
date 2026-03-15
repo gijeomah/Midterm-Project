@@ -108,7 +108,8 @@ function typing(){
     inpt2.addEventListener("keydown",function(event){
         if (event.key=="Enter"){
             if (inpt2.value=="I Didn't Do It"){
-                winscrn();
+                //winscrn();
+                console.log("idk");
             }else{
                 loscrn();
             }
