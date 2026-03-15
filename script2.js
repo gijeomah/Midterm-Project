@@ -69,25 +69,26 @@ function classroom(){
 };
 async function talk2(){
     console.log("error handeling")
-    //clrbtn(kilbtn);
-    //clrbtn(detbtn);
-    //let lst = ["Did", "You", "Do", "It"];
+    clrbtn(kilbtn);
+    clrbtn(detbtn);
+    let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
-    //caption.textContent="Type this: ";
-    //contain.appendChild(inpt);
-    //for (let i=0; i<lst.length; i++){
-        //caption.textContent+=lst[i] + " ";
-        //await delay (3000);
-   // };
-    //inpt.addEventListener("keydown", function(event){
-        //if (event.key == "Enter"){
-           // if (inpt.value == "Did You Do It"){
-               // winscrn();
-            //}else {
-                //loscrn();
-            //}
-        //}
-    //});
+    let inpt3 = document.createElement('input');
+    caption.textContent="Type this: ";
+    contain.appendChild(inpt3);
+    for (let i=0; i<lst.length; i++){
+        caption.textContent+=lst[i] + " ";
+        await delay (3000);
+    };
+    inpt3.addEventListener("keydown", function(event){
+        if (event.key == "Enter"){
+            if (inpt3.value == "Did You Do It"){
+               winscrn();
+            }else {
+                loscrn();
+            }
+        }
+    });
 
 };
 
