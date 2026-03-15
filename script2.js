@@ -68,9 +68,10 @@ function classroom(){
 async function talk2(){
     let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
+    caption.textContent="Type this: ";
     contain.appendChild(inpt);
     for (let i=0; i<lst.length; i++){
-        para.textContent+=lst[i] + " ";
+        caption.textContent+=lst[i] + " ";
         await delay (2000);
     };
     inpt.addEventListener("keydown", function(event){
