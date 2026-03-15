@@ -12,6 +12,8 @@ console.log(contain);
 let okbtn = document.getElementById("submit");
 //defining body 
 let body = document.body;
+//defining timer
+let timer = 25;
 //reassign bttn name 
 //check if user clicks killer or detective (putplace holder)
 kilbtn.addEventListener('click', function(){
@@ -73,7 +75,7 @@ function talk(){
 };
 function fight(){
     console.log("idk");
-    let timer = 25;
+    timer = 25;
     let id = 0;
     para.textContent="You are now in the Backyard, find clues to perfectly place the body";
     caption.textContent="Lets Fight You have"+timer;
@@ -116,7 +118,7 @@ function winscrn(){
     clrbtn(caption);
     clrbtn(kilbtn);
     clrbtn(detbtn);
-    clrbtn(ok);
+    clrbtn(okbtn);
     //clear buttons
 };
 function loscrn(){
@@ -155,3 +157,7 @@ async function dropHandler(ev) {
         }
 	};
     //test test test tes
+//Googled how to delay a command:
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
