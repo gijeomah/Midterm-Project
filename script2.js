@@ -76,7 +76,7 @@ async function talk2(){
     contain.appendChild(inpt);
     for (let i=0; i<lst.length; i++){
         caption.textContent+=lst[i] + " ";
-        await delay (2000);
+        await delay (3000);
     };
     inpt.addEventListener("keydown", function(event){
         if (event.key == "Enter"){
@@ -95,6 +95,8 @@ function typing(){
     //clr btns
     clrbtn(kilbtn);
     clrbtn(detbtn);
+    //GOOGLED (wipes all previous event listners)
+    inpt=inpt.cloneNode(true)
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
     contain.appendChild(inpt);
