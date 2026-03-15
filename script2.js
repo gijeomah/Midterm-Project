@@ -67,49 +67,43 @@ function classroom(){
     audio.play();
 
 };
-async function talk2(){
-    clrbtn(kilbtn);
-    clrbtn(detbtn);
-    let lst = ["Did", "You", "Do", "It"];
+//async function talk2(){
+    //clrbtn(kilbtn);
+    //clrbtn(detbtn);
+    //let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
-    let new_inpt=document.createElement('input');
-    //inpt=inpt.cloneNode(true);//googled
-    caption.textContent="Type this: ";
-    contain.appendChild(new_inpt);
-    for (let i=0; i<lst.length; i++){
-        caption.textContent+=lst[i] + " ";
-        await delay (3000);
-    };
-    new_inpt.addEventListener("keydown", function(event){
-        if (event.key == "Enter"){
-            if (new_inpt.value == "Did You Do It"){
-                winscrn();
-            }else {
-                loscrn();
-            }
-        }
-    });
+    //caption.textContent="Type this: ";
+    //contain.appendChild(inpt);
+    //for (let i=0; i<lst.length; i++){
+        //caption.textContent+=lst[i] + " ";
+        //await delay (3000);
+   // };
+    //inpt.addEventListener("keydown", function(event){
+        //if (event.key == "Enter"){
+           // if (inpt.value == "Did You Do It"){
+               // winscrn();
+            //}else {
+                //loscrn();
+            //}
+        //}
+    //});
 
-};
+//};
 
 function typing(){
     console.log("typing");
     //clr btns
     clrbtn(kilbtn);
     clrbtn(detbtn);
-    //GOOGLED (wipes all previous event listners)
-    //inpt=inpt.cloneNode(true);
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
-    let inpt2=document.createElement('input');
-    contain.appendChild(inpt2);
+    contain.appendChild(inpt);
     caption.textContent="Your Words are: ";
     //check if inpt.value == "Secret Message"
-    inpt2.addEventListener("keydown",function(event){
+    inpt.addEventListener("keydown",function(event){
         if (event.key=="Enter"){
-            if (inpt2.value=="I Didn't Do It"){
-                //winscrn();
-                console.log("idk");
+            if (inpt.value=="I Didn't Do It"){
+                winscrn();
             }else{
                 loscrn();
             }
@@ -131,7 +125,6 @@ function talk(){
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
     //console.log(inpt);
-    inpt=inpt.cloneNode(true);//googled
     inpt.hidden=false;
     //create paragraph tag to ask that question
     txt.textContent = "WHOSS DEAD BOdY IS THIS";
