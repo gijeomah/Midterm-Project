@@ -49,7 +49,7 @@ function dection(){
     kilbtn.textContent="Look in classroom";
     detbtn.textContent="find Murder Weapon";
     kilbtn.addEventListener('click',classroom);
-    detbtn.addEventListener('click',winscrn);
+    //detbtn.addEventListener('click',winscrn);
 
 };
 
