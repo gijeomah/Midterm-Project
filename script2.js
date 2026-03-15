@@ -58,7 +58,7 @@ function classroom(){
     //change background image to classroom
     //contain.appendChild(audio);
     audio.loop=true;
-    audio.volume = 0.5;
+    audio.volume = 0.10;
     audio.play;
 
 };
