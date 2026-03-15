@@ -59,7 +59,7 @@ function classroom(){
     //contain.appendChild(audio);
     audio.loop=true;
     audio.volume = 0.10;
-    audio.play;
+    audio.play();
 
 };
 
