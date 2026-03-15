@@ -34,7 +34,7 @@ kilbtn.addEventListener('click', function(){
         kilbtn.textContent="Talk to detcetive";
         detbtn.textContent="Fight the Detective";
         kilbtn.addEventListener('click',talk);
-        detbtn.addEventListener('click',typing);
+        //detbtn.addEventListener('click',typing);
     });
 	
 
