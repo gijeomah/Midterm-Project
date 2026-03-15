@@ -72,6 +72,7 @@ async function talk2(){
     clrbtn(detbtn);
     let lst = ["Did", "You", "Do", "It"];
     //inpt.hidden=false;
+    inpt=inpt.cloneNode(true);//googled
     caption.textContent="Type this: ";
     contain.appendChild(inpt);
     for (let i=0; i<lst.length; i++){
@@ -96,7 +97,7 @@ function typing(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     //GOOGLED (wipes all previous event listners)
-    inpt=inpt.cloneNode(true)
+    inpt=inpt.cloneNode(true);
     //type blah blah, in input box 
     para.textContent="Type these words: I , Didn't, Do , It";
     contain.appendChild(inpt);
@@ -127,6 +128,7 @@ function talk(){
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
     //console.log(inpt);
+    inpt=inpt.cloneNode(true);//googled
     inpt.hidden=false;
     //create paragraph tag to ask that question
     txt.textContent = "WHOSS DEAD BOdY IS THIS";
