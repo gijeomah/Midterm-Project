@@ -96,13 +96,14 @@ function typing(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     //type blah blah, in input box 
+    let inpt2=document.createElement('input')
     para.textContent="Type these words: I , Didn't, Do , It";
-    contain.appendChild(inpt);
+    contain.appendChild(inpt2);
     caption.textContent="Your Words are: ";
     //check if inpt.value == "Secret Message"
-    inpt.addEventListener("keydown",function(event){
+    inpt2.addEventListener("keydown",function(event){
         if (event.key=="Enter"){
-            if (inpt.value=="I Didn't Do It"){
+            if (inpt2.value=="I Didn't Do It"){
                 winscrn();
             }else{
                 loscrn();
