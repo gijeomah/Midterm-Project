@@ -146,6 +146,7 @@ function dropHandler(ev) {
 	let usrmsg = prompt("Enter the hidden message");
 	if (usrmsg == "char1"){
 		para.textContent="You have sucessfully hidden body "; 
+        await delay(2000);
 		winscrn();
 		}else if(usrmsg != "char1" && timer>0){
             para.textContent="You have until the timer runs out!";
