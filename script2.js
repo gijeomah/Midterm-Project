@@ -147,7 +147,7 @@ function dropHandler(ev) {
 	if (usrmsg == "char1"){
 		para.textContent="You have sucessfully hidden body "; 
 		winscrn();
-		}else if(timer > 0){
+		}else if(usrmsg !== "char1" && timer>0){
             para.textContent="You have until the timer runs out!";
         }else{
             loscrn();
