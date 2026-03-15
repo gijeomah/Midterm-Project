@@ -56,9 +56,9 @@ function typing(){
             }else{
                 loscrn();
             }
-        }else{
-            caption.textContent+=event.key;
         }
+        caption.textContent+=event.key;
+    
     });
     //display what they are typing
     //event listner to append the key stroke to paragraph tag
