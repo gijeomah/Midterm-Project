@@ -1,0 +1,442 @@
+/* ============================================
+   ISEKAI MURDER MYSTERY — Visual Theme
+   
+   SAFETY RULES APPLIED:
+   - Never sets display, visibility, or
+     pointer-events on any element
+   - Never overrides the [hidden] attribute
+   - body::before uses pointer-events:none
+   - All interactive element styling is
+     purely cosmetic (color, font, shadow)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --ink:          #07050f;
+  --deep:         #0e0a1a;
+  --gold:         #c9993a;
+  --gold-dim:     #7a5c1e;
+  --gold-glow:    rgba(201,153,58,0.25);
+  --blood:        #7a0b0b;
+  --blood-light:  #b52020;
+  --blood-glow:   rgba(181,32,32,0.4);
+  --mist:         #ccc4dc;
+  --mist-dim:     #6b5f7a;
+  --border-gold:  rgba(201,153,58,0.28);
+  --border-blood: rgba(122,11,11,0.4);
+}
+
+/* ══════════════════════════════════════════
+   BODY & BACKGROUND
+══════════════════════════════════════════ */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'EB Garamond', 'Noto Serif JP', Georgia, serif;
+  font-size: 18px;
+  color: var(--mist);
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%,
+      rgba(122,11,11,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 85% 100%,
+      rgba(30,12,60,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 70% at 15% 80%,
+      rgba(10,5,30,0.4)   0%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* Decorative top bar — pointer-events:none so it NEVER blocks clicks */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--blood) 25%,
+    var(--blood-light) 50%,
+    var(--blood) 75%,
+    transparent 100%);
+  box-shadow: 0 0 20px 3px var(--blood-glow);
+  pointer-events: none; /* SAFE: never intercepts clicks */
+  z-index: 9999;
+  animation: topBarPulse 4s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════
+   H1 TITLE
+══════════════════════════════════════════ */
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.25rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-shadow:
+    0 0 16px var(--gold-glow),
+    0 0 50px rgba(201,153,58,0.12),
+    1px 2px 0 var(--blood);
+  padding: 54px 20px 8px;
+  margin: 0 auto;
+  max-width: 880px;
+  animation: titleReveal 1.1s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* Japanese subtitle under the title */
+h1::after {
+  content: '── 死の謎 ──';
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.55em;
+  color: var(--blood-light);
+  margin-top: 7px;
+  text-shadow: 0 0 10px var(--blood-glow);
+  animation: fadeUp 1.5s ease both 0.2s;
+}
+
+/* ══════════════════════════════════════════
+   #main_intro  (JS updates .textContent)
+══════════════════════════════════════════ */
+#main_intro {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.9;
+  text-align: center;
+  color: var(--mist);
+  max-width: 700px;
+  margin: 14px auto 0;
+  padding: 20px 36px;
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(14,10,26,0.55) 50%,
+    transparent 100%);
+  animation: fadeUp 1.3s ease both 0.15s;
+}
+
+/* ══════════════════════════════════════════
+   #story1  (JS updates .textContent)
+══════════════════════════════════════════ */
+#story1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--blood-light);
+  margin: 8px auto 0;
+  max-width: 880px;
+  padding: 5px 20px;
+  text-shadow: 0 0 10px var(--blood-glow);
+  animation: fadeUp 1.4s ease both 0.25s;
+}
+
+/* ══════════════════════════════════════════
+   #image  (JS updates .src)
+══════════════════════════════════════════ */
+#image {
+  display: block;
+  width: calc(100% - 40px);
+  max-width: 840px;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 16px auto;
+  border: 1px solid var(--border-gold);
+  outline: 1px solid var(--border-blood);
+  outline-offset: 4px;
+  box-shadow:
+    0 14px 60px rgba(0,0,0,0.88),
+    0 0 80px rgba(122,11,11,0.09);
+  filter: brightness(0.83) contrast(1.08) saturate(0.82);
+  transition: filter 0.55s ease, box-shadow 0.55s ease;
+  animation: fadeUp 1.5s ease both 0.3s;
+}
+
+#image:hover {
+  filter: brightness(0.93) contrast(1.1) saturate(0.95);
+  box-shadow:
+    0 14px 60px rgba(0,0,0,0.88),
+    0 0 100px rgba(201,153,58,0.08);
+}
+
+/* ══════════════════════════════════════════
+   #buttonContainer
+   JS appends: inpt, inpt2, inpt3, audio, draimg
+══════════════════════════════════════════ */
+#buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 20px 50px;
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Thin decorative divider above the buttons */
+#buttonContainer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 260px; height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--border-gold), transparent);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════
+   ALL BUTTONS — cosmetic only
+   We NEVER set display or visibility here.
+   The [hidden] attribute on #submit is
+   controlled only by HTML/JS.
+══════════════════════════════════════════ */
+button {
+  font-family: 'Cinzel', serif;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  cursor: pointer;
+  border: 1px solid var(--border-gold);
+  background: linear-gradient(145deg,
+    rgba(18,12,32,0.97) 0%,
+    rgba(10,7,20,0.95) 100%);
+  color: var(--mist-dim);
+  position: relative;
+  overflow: hidden;
+  transition:
+    color        0.22s ease,
+    border-color 0.22s ease,
+    box-shadow   0.22s ease,
+    transform    0.14s ease;
+}
+
+button:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  box-shadow:
+    0 0 16px var(--gold-glow),
+    inset 0 0 14px rgba(201,153,58,0.04);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ── #kill — red glow ── */
+#kill {
+  border-color: var(--border-blood);
+  color: #aa6868;
+}
+#kill:hover {
+  color: #ff8888;
+  border-color: var(--blood-light);
+  box-shadow:
+    0 0 18px var(--blood-glow),
+    inset 0 0 10px rgba(181,32,32,0.07);
+  text-shadow: 0 0 8px rgba(255,136,136,0.45);
+  transform: translateY(-2px);
+}
+
+/* ── #detect — cool blue-silver ── */
+#detect {
+  border-color: rgba(80,80,140,0.38);
+  color: #8888bb;
+}
+#detect:hover {
+  color: #b8c4ff;
+  border-color: rgba(110,110,200,0.65);
+  box-shadow:
+    0 0 18px rgba(110,110,200,0.28),
+    inset 0 0 10px rgba(100,100,200,0.05);
+  text-shadow: 0 0 8px rgba(184,196,255,0.38);
+  transform: translateY(-2px);
+}
+
+/* ── #submit — gold. CSS never touches [hidden]. ── */
+#submit {
+  border-color: rgba(201,153,58,0.45);
+  color: var(--gold);
+  background: linear-gradient(145deg,
+    rgba(28,18,6,0.97) 0%,
+    rgba(10,7,3,0.95) 100%);
+}
+#submit:hover {
+  color: #f0cf70;
+  border-color: var(--gold);
+  box-shadow:
+    0 0 20px var(--gold-glow),
+    inset 0 0 14px rgba(201,153,58,0.06);
+  transform: translateY(-2px);
+}
+
+/* Play / Pause buttons — styled subtly different */
+button[onclick="playMusic()"],
+button[onclick="pauseMusic()"] {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  padding: 8px 20px;
+  border-color: rgba(80,60,120,0.3);
+  color: var(--mist-dim);
+}
+
+button[onclick="playMusic()"]:hover,
+button[onclick="pauseMusic()"]:hover {
+  color: #b0a0e0;
+  border-color: rgba(120,100,200,0.55);
+  box-shadow: 0 0 14px rgba(120,100,200,0.22);
+}
+
+/* ══════════════════════════════════════════
+   INPUT FIELDS
+   Created dynamically by JS (inpt, inpt2, inpt3)
+   CSS only styles visuals — never touches
+   .value, .hidden, or event behavior
+══════════════════════════════════════════ */
+input {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--mist);
+  background: rgba(7,5,14,0.88);
+  border: none;
+  border-bottom: 2px solid var(--blood);
+  padding: 9px 14px;
+  width: 260px;
+  max-width: 90vw;
+  outline: none;
+  caret-color: var(--gold);
+  transition: border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+input:focus {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 3px 18px rgba(201,153,58,0.14);
+}
+
+/* ══════════════════════════════════════════
+   DYNAMIC <p> TAGS
+   JS appends txt (textContent changes by JS)
+   Excludes #main_intro and #story1 which
+   are already styled above
+══════════════════════════════════════════ */
+p:not(#main_intro):not(#story1) {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+  padding: 10px 20px;
+  max-width: 700px;
+  margin: 6px auto;
+  text-shadow: 0 0 10px rgba(201,153,58,0.28);
+  animation: fadeUp 0.45s ease both;
+}
+
+/* ══════════════════════════════════════════
+   DRAGGABLE KNIFE IMAGE
+   JS creates draimg via createElement('img')
+   and appends to body — styled separately
+   from #image
+══════════════════════════════════════════ */
+img:not(#image) {
+  display: block;
+  margin: 10px auto;
+  max-width: 115px;
+  filter: drop-shadow(0 0 10px rgba(181,32,32,0.65)) brightness(0.88);
+  cursor: grab;
+  transition: filter 0.28s ease, transform 0.28s ease;
+}
+
+img:not(#image):hover {
+  filter: drop-shadow(0 0 20px rgba(181,32,32,0.9)) brightness(1.08);
+  transform: rotate(-5deg) scale(1.07);
+}
+
+img:not(#image):active {
+  cursor: grabbing;
+}
+
+/* ══════════════════════════════════════════
+   SCROLLBAR
+══════════════════════════════════════════ */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb {
+  background: var(--blood);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--blood-light); }
+
+/* ══════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+══════════════════════════════════════════ */
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    letter-spacing: 0.4em;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.1em;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes topBarPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px 3px var(--blood-glow);
+  }
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 30px 5px rgba(181,32,32,0.6);
+  }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.1rem;
+    padding-top: 36px;
+  }
+  #main_intro {
+    font-size: 0.94rem;
+    padding: 14px 18px;
+  }
+  #image {
+    max-height: 210px;
+    width: calc(100% - 20px);
+  }
+  button {
+    font-size: 0.6rem;
+    padding: 9px 16px;
+  }
+  input {
+    width: 200px;
+  }
+}
