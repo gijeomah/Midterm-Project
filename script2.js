@@ -53,16 +53,37 @@ function dection(){
 
 };
 function classroom(){
-    //change detbtn
+    kilbtn.textContent="Fight/Talk to detective";
+    detbtn.textContent="Try to catch BS?";
+    kilbtn.addEventListener('click',talk2);
     //change kilbtn
     //change background image to classroom
     //contain.appendChild(audio);
+    para.textContent="Char1 is dead! You suspect your fellow classmate";
     audio.loop=true;
     audio.volume = 0.75;
     audio.play();
 
 };
+async function talk2(){
+    let lst = ["Did", "You", "Do", "It"];
+    //inpt.hidden=false;
+    contain.appendChild(inpt);
+    for (let i=0; i<lst.length; i++){
+        para.textContent+=lst[i] + " ";
+        await delay (2000);
+    };
+    inpt.addEventListener("keydown", function(event){
+        if (event.key == "Enter"){
+            if (inpt.value == "Did You Do It"){
+                winscrn();
+            }else {
+                loscrn();
+            }
+        }
+    });
 
+};
 
 function typing(){
     console.log("typing");
