@@ -12,6 +12,8 @@ console.log(contain);
 let okbtn = document.getElementById("submit");
 //defining body 
 let body = document.body;
+let txt = document.createElement('p');
+let inpt = document.getElementById('inpt');
 //defining timer
 let timer = 25;
 //reassign bttn name 
@@ -32,19 +34,28 @@ kilbtn.addEventListener('click', function(){
         kilbtn.textContent="Talk to detcetive";
         detbtn.textContent="Fight the Detective";
         kilbtn.addEventListener('click',talk);
+        detbtn.addEventListener('click',typing);
     });
 	
 
 });
+function typing(){
+    console.log("typing");
+    //type blah blah, in input box 
+    //check if inpt.value == "Secret Message"
+    //display what they are typing
+}
+
 function talk(){
     console.log("talk");
     para.textContent="You decided to talk to the detetive huh?";
     caption.textContent="Discover how to woo them over";
     image.src="backyard.jpeg";
-    let inpt = document.createElement('input');
     console.log(inpt);
-    inpt.type="text";
-    inpt.textContent = "WHOSS DEAD BOdY IS THIS";
+    inpt.hidden=false;
+    //create paragraph tag to ask that question
+    p.textContent = "WHOSS DEAD BOdY IS THIS";
+    body.append(p);
     contain.appendChild(inpt);
     clrbtn(kilbtn);
     clrbtn(detbtn);
@@ -119,6 +130,8 @@ function winscrn(){
     clrbtn(kilbtn);
     clrbtn(detbtn);
     clrbtn(okbtn);
+    clrbtn(p);
+    clrbtn(inpt);
     //clear buttons
 };
 function loscrn(){
@@ -128,6 +141,9 @@ function loscrn(){
     clrbtn(caption);
     clrbtn(kilbtn);
     clrbtn(detbtn);
+    clrbtn(okbtn);
+    clrbtn(p);
+    clrbtn(inpt);
     //clear buttons
 }
 
@@ -148,12 +164,15 @@ async function dropHandler(ev) {
 	let usrmsg = prompt("Enter the hidden message");
 	if (usrmsg == "char1"){
 		para.textContent="You have sucessfully hidden body "; 
-        await delay(20000);
+        await delay(5000);
 		winscrn();
 		}else if(timer>0){
             para.textContent="You have until the timer runs out!";
         }else{
             loscrn();
+        }
+    if (timer==0){
+        loscrn();
         }
 	};
     //test test test tes
