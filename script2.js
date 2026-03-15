@@ -18,6 +18,7 @@ let inpt = document.createElement('input');
 let timer = 25;
 //reassign bttn name 
 //check if user clicks killer or detective (putplace holder)
+detbtn.addEventListener('click',dection);
 kilbtn.addEventListener('click', function(){
     para.textContent = "You killed char 1 hide the body or weapon?";
     caption.textContent = "You are now in the classroom";
@@ -39,6 +40,10 @@ kilbtn.addEventListener('click', function(){
 	
 
 });
+function dection(){
+    console.log("Dection");
+    image.src="backyard.jpeg";
+}
 function typing(){
     console.log("typing");
     //clr btns
