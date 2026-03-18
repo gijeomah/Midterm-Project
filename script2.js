@@ -31,7 +31,7 @@ kilbtn.addEventListener('click', function(){
         kilbtn.textContent = "Hide in the backyard";
         detbtn.textContent = "Hide in the classroom";
         kilbtn.addEventListener('click',fight);
-        //detbtn.addEventListener('click',winscrn);
+        detbtn.addEventListener('click',winscrn);
     });
 	detbtn.addEventListener('click',function(){
         kilbtn.textContent="Talk to detcetive";
@@ -49,7 +49,7 @@ function dection(){
     kilbtn.textContent="Look in classroom";
     detbtn.textContent="find Murder Weapon";
     kilbtn.addEventListener('click',classroom);
-    detbtn.addEventListener('click',winscrn);
+    //detbtn.addEventListener('click',winscrn);
 
 };
 
