@@ -20,7 +20,7 @@ let inpt = document.createElement('input');
 let timer = 25;
 //reassign bttn name 
 //check if user clicks killer or detective (putplace holder)
-detbtn.addEventListener('click',dection);
+detbtn.addEventListener('click',dection,{ once: true });
 kilbtn.addEventListener('click', function(){
     para.textContent = "You killed char 1 hide the body or weapon?";
     caption.textContent = "You are now in the classroom";
@@ -30,15 +30,15 @@ kilbtn.addEventListener('click', function(){
     kilbtn.addEventListener('click',function(){
         kilbtn.textContent = "Hide in the backyard";
         detbtn.textContent = "Hide in the classroom";
-        kilbtn.addEventListener('click',fight);
+        kilbtn.addEventListener('click',fight,{ once: true });
         //detbtn.addEventListener('click',winscrn);
-    });
+    },{ once: true });
 	detbtn.addEventListener('click',function(){
         kilbtn.textContent="Talk to detcetive";
         detbtn.textContent="Fight the Detective";
-        kilbtn.addEventListener('click',talk);
-        detbtn.addEventListener('click',typing);
-    });
+        kilbtn.addEventListener('click',talk,{ once: true });
+        detbtn.addEventListener('click',typing,{ once: true });
+    },{ once: true });
 	
 
 });
@@ -48,7 +48,7 @@ function dection(){
     caption.textContent="Backyard";
     kilbtn.textContent="Look in classroom";
     detbtn.textContent="find Murder Weapon";
-    kilbtn.addEventListener('click',classroom);
+    kilbtn.addEventListener('click',classroom,{ once: true });
     //detbtn.addEventListener('click',winscrn);
 
 };
@@ -56,8 +56,8 @@ function dection(){
 function classroom(){
     kilbtn.textContent="Fight/Talk to detective";
     detbtn.textContent="Try to catch BS?";
-    kilbtn.addEventListener('click',talk2);
-    detbtn.addEventListener('click',loscrn);
+    kilbtn.addEventListener('click',talk2,{ once: true });
+    detbtn.addEventListener('click',loscrn,{ once: true });
     //change kilbtn
     //change background image to classroom
     contain.appendChild(audio);
