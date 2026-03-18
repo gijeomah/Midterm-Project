@@ -31,7 +31,7 @@ kilbtn.addEventListener('click', function(){
         kilbtn.textContent = "Hide in the backyard";
         detbtn.textContent = "Hide in the classroom";
         kilbtn.addEventListener('click',fight);
-        detbtn.addEventListener('click',winscrn);
+        //detbtn.addEventListener('click',winscrn);
     });
 	detbtn.addEventListener('click',function(){
         kilbtn.textContent="Talk to detcetive";
